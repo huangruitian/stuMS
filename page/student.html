@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生信息管理系统</title>
+    <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script>
+        window.onload = function () {
+            $("#table").bootstrapTable({
+                url:"/getStudentPage",
+                striped:true,
+                pagination:true,
+                pageSize:5,
+                pageList:[5,10,20],
+                pageNumber:1,
+                sidePagination:"server",
+                columns:[
+                    {
+                        field:"id",
+                        title:"学生id"
+                    },
+                    {
+                        field:"name",
+                        title:"姓名"
+                    },
+                    {
+                        field:"sex",
+                        title:"性别"
+                    },
+                    {
+                        field:"birth",
+                        title:"生日"
+                    },
+                    {
+                        field:"ctime",
+                        title:"创建时间"
+                    }
+                ],
+            })
+        }
+    </script>
+</head>
+<body>
+    <table id="table">
+    </table>
+</body>
+</html>
